@@ -1,0 +1,81 @@
+<Listitem>
+    
+    size_hint_y: None
+    height: 30
+    on_press: root.item_press()
+    MDListItemHeadlineText:
+        id: label1
+        text: "item name{}                              Headline  5555"
+
+
+<MyLayout>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            text: "Maestro"
+            size_hint_y: None
+            height: 50
+            font_size: 55
+
+        Accordion:
+            orientation: 'vertical'	
+            size_hint_y: None
+            height: 600
+
+            AccordionItem:
+                id:title_product
+                title: "Panel 1"
+                ScrollView:
+                    MDList:
+                        id: container_2  
+		
+            AccordionItem:
+                id:title1
+                title: "Panel 2"
+                BoxLayout:
+                    orientation: "vertical"
+                    Label:
+                        id: label2
+                        text: "Maestro"
+                        size_hint_y: None
+                        height: 50
+                        font_size: 55
+                    ScrollView:
+                        MDList:
+                            id: container_1    
+
+            AccordionItem:
+                title: "Panel 3"
+                Label:
+                    text: "Panel 3 text"
+                    font_size: 20
+
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+                text: "Name"
+                size_hint_y: None
+                height: 50
+                size_hint_x: None
+                width:100
+
+            TextInput:
+                id: name
+                multiline:False
+                size_hint_y: None
+                height: 50     
+        
+
+        Button:
+            text: "Submit"
+            font_size: 32
+            size_hint_y: None
+            height: 50
+            on_press: root.add_item()        
+
